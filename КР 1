@@ -1,0 +1,105 @@
+# Курсово задание
+# 10 Конзолни команди 
+## Петър Каратасев
+## Специалност: Информационни системи и технологии
+### Факултетен номер: 21251421019
+## Основни команди от "run" конзолата
+run/cmd
+# За бърз достъп до Event Viewer
+Start Menu, Run и eventvwr.msc, Enter
+# Проверка на свързаност
+ping 192.168.0.1 -t
+ping abv.bg
+arp -a
+# Проверка за Bad Sectors(повредени сектори на хард диска)
+Избирате Start menu, след това Run или ако сте с Visта или Windows 7 в сърч полето пишете Cmd, след това десен бутон Run as Administrator
+В отворилият се прозорец напишете "chkdsk /f e:", където буквата F е за оправяне(fix), буквата Е: e името на дялът, които искате да проверите за грешки и съответно поправите. Можете да проверите всеки дял по същния начин, като съответно заместите буквата "е" с буквата на вашият партишън. В прозореца ще видите информация за вашия дял(максимален размер, файлове, бед сектори и т.н.)
+По-добрият вариант е да напишете "chkdsk /r e:", където "r" е за възстановяване(recover) и би трябвало да оправи файловата система. Тя отнема малко повече време и дава същата информация.
+В случай, че искате да проверите дискът на който е инсталиран вашият Windows ще получите следното съобщение, а именно, че дялът в момента се използва и дали искате да се извърши проверка при следващото стартиране на системата. Ако искате да се извърши тази команда, натискате "Y" за потвърждаване.
+# Показва текущите мрежови настройки, включително и МАС адреса
+ipconfig /all
+# Проследяване на пътя
+tracert abv.bg (windows) traceroute abv.bg (unix, linux)
+DNS
+ipconfig /displaydns
+nslookup
+netstat -a
+ipconfig /flushdns – Command to reset, flush or clear your DNS cache.
+# За рутиране / Getaway
+route print netstat -r
+route add
+route change
+# Управление на потребителите и паролите им в Уиндоус
+control userpasswords2
+msconfig
+tasklist /svc   tskill
+# За поправка на боот сектор
+Използвайте стъпките на ваша отговорност.
+1. Намерете boot диск на Уиндоус XP без значение кое SP е той. ( все пак вие само ще фикснете MBR – няма да преинсталирате )
+2. След като boot-нете от вашия ХР диск първия въпрос който ще ви бъде зададен е – дали искате да поправите вашия уиндолс или искате фреш инстал. ( Натиснете R – за оправяне )
+3. Тогава би трябвало да имате досъп до конзола. Ще ви бъде зададен въпрос, каде точно се намира вашия boot сектор, натиснете 1.
+4. След това ще бъдете подканени да въведете администраторската парола на ХР-то, след вавеждането и ще получите конзола с администраторски права.
+5. Въведете това:
+bootcfg /rebuild
+fixboot
+fixmbr
+
+# Как да разрешите проблема с казуса “NTLDR is Missing” Error on Windows Start-up
+Type the following commands, pressing enter after each line. Replace “e:\” with the letter of your CD-ROM drive.
+copy e:\i386\ntldr c:\
+copy e:\i386\ntdetect.com c:\
+fixboot
+fixmbr
+bootcfg /rebuild
+# Списък с команди от "run" конзолата
+To Access -	Run Command
+ access.cpl - access.cpl
+Accessibility Wizard -	accwiz
+Add Hardware Wizard -	hdwwiz.cpl
+Add/Remove Programs -	appwiz.cpl
+Administrative Tools -	control admintools
+Automatic Updates -	wuaucpl.cpl
+Bluetooth Transfer Wizard -	fsquirt
+Calculator - calc
+Certificate Manager - certmgr.msc
+Character Map -	charmap
+Check Disk Utility - chkdsk
+Clipboard Viewer -	clipbrd
+Command Prompt - cmd
+Component Services - dcomcnfg
+Computer Management - compmgmt.msc
+Control Panel -	control
+Date and Time Properties -	timedate.cpl
+DDE Shares -	ddeshare
+Device Manager -	devmgmt.msc
+Direct X Control Panel -	directx.cpl
+Direct X Troubleshooter -	dxdiag
+Disk Cleanup Utility - 	cleanmgr
+Disk Defragment -	dfrg.msc
+Disk Management -	diskmgmt.msc
+Disk Partition Manager -	diskpart
+Display Properties -	control desktop
+Display Properties -	desk.cpl
+Display Properties -	control color (w/Appearance Tab Preselected)
+Dr. Watson System Troubleshooting Utility -	drwtsn32
+Event Viewer -	eventvwr.msc
+Findfast -	findfast.cpl
+File Signature Verification Tool -	sigverif
+Folders Properties -	folders
+Fonts	control - fonts
+Fonts Folder -	fonts
+Group Policy Editor (XP Prof) -	gpedit.msc
+HyperTerminal -	hypertrm
+Iexpress Wizard -	iexpress
+Indexing Service -	ciadv.msc 
+Internet Connection Wizard -	icwconn1
+Internet Properties - 	inetcpl.cpl 
+Internet Setup Wizard - 	inetwiz 
+IP Configuration - 	ipconfig /all  (Display Connection Configuration) 
+IP Configuration -	ipconfig /displaydns  (Display DNS Cache Contents)
+IP Configuration -	ipconfig /flushdns  (Delete DNS Cache Contents)
+IP Configuration -	ipconfig /release  (Release All Connections)
+IP Configuration - 	ipconfig /renew  (Renew All Connections)
+IP Configuration -	ipconfig /registerdns  (Refreshes DHCP & Re-Registers DNS)
+IP Configuration -	ipconfig /showclassid  (Display DHCP Class ID)
+IP Configuration -	ipconfig /setclassid   (Modifies DHCP Class ID)
